@@ -1,2 +1,2 @@
-# single-particle-system
-Single particle system in Processing (p5.js)
+# spring-forces
+Modeling spring forces with Processing (p5.js)
