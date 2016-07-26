@@ -13,6 +13,6 @@ function draw(){
 	background(51);
 	this.particle.run();
 	if(this.particle.isDead()){
-		this.particle = new Particle(createVector(width/2,20));
+		this.particle = new Particle(width/2,20);
 	}
 }
