@@ -11,8 +11,11 @@ function setup() {
 
 function draw(){
 	background(51);
+	var gravity = createVector(.0001,0);
+
+	this.particle.applyForce(gravity);
 	this.particle.run();
 	if(this.particle.isDead()){
-		this.particle = new Particle(width/2,20);
+		this.particle = new Particle(createVector(width/2,20));
 	}
 }

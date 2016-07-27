@@ -1,8 +1,8 @@
 function Particle(x_,y_){
-	this. position = createVector(x_,y_);
+	this.position = createVector(x_,y_);
 	this.acceleration = createVector(0,0.05);
 	this.velocity = createVector(random(-1,1),random(-1,0));
-
+	this.mass=.04
 	this.lifespan = 255;
 
 	this.run = function(){
@@ -22,6 +22,12 @@ function Particle(x_,y_){
 		this.velocity.add(this.acceleration);
 		this.position.add(this.velocity);
 		this.lifespan -= 2;
+	}
+
+	this.applyForce = function(force){
+		var f = force.copy();
+		f.div(this.mass);
+		this.acceleration.add(f);
 	}
 
 	this.isDead = function(){
